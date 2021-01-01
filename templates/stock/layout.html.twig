@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+{% block title %} {{parent()}} -Article {% endblock %}
+	{% block titre %} {{parent()|upper}} -Articles {% endblock %}
+
+		{% block body %}
+			<div id="menu" class="col-md-3">
+				{{render(controller('App\\Controller\\StockController::menu'))}}
+
+			</div>
+
+
+
+
+
+			<div id="content" class="col-md-9">
+				<p>
+					Vous etes dans la partie Articles
+				</p>
+				{% block produit_body %}
+				{% endblock %}
+			</div>
+		{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block body %}
+
+{% for produit in produits  %}
+   
+
+
+
+    <p><a href="">{{ produit.id }} - {{ produit.ref }} - {{ produit.designation }} - {{ produit.prix }} - {{ produit.quantite }}
+        </a>
+        <a href="{{ path('supprimer', {'id':produit.id}) }}">Supprimer</a></p>
+    
+{% endfor %}
+
+
+
+
+
+{% endblock %}

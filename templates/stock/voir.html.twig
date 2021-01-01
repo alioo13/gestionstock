@@ -1,0 +1,46 @@
+{% extends "stock/layout.html.twig" %}
+
+
+{% block title %}
+    {{parent()}} -Voir un article
+{% endblock %}
+
+
+ {% block stylesheets %}
+ 	{{parent()}}
+ 	<link rel="stylesheet" type="text/css"
+ 	      href="{{asset('css/supprimer.css')}}">
+ {% endblock %}
+
+
+
+	{% block titre %} 
+		{{parent()|upper}} -Voir un article 
+	{% endblock %}
+
+
+	{% block produit_body %}
+
+{% for message in app.flashes('notice') %}
+	<div class="flash-info" style="color:red"> {{message}}</div>
+{% endfor %}
+
+
+		<h1>Bonjour</h1>
+		<h1>Details d'article ayant l'id: {{produit.id}}:</h1>
+
+	 
+		<h2>Ref:{{produit.ref}}</h2>  
+		<h2>Designation:{{produit.designation}}</h2>
+		<h2>prix:{{produit.prix}}</h2>
+        <h2>quantite:{{produit.quantite}}</h2>
+
+
+
+    {% if produit.image is not null %}
+    <h2>Image</h2>
+    <img src="{{ produit.image.url }}" alt="{{ produit.image.alt }}" height="100">
+    {% endif %}
+     
+     
+{% endblock %}

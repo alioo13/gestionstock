@@ -1,0 +1,29 @@
+{% extends "stock/layout.html.twig" %}
+
+
+
+{% block title %} {{parent()}} -Ajout {% endblock %}
+
+
+
+
+{% block stylesheets %}
+ 	{{parent()}}
+ 	<link rel="stylesheet" type="text/css"
+ 	      href="{{asset('css/supprimer.css')}}">
+ {% endblock %}
+
+
+
+	{% block titre %} {{parent()|upper}} -Ajouter un article {% endblock %}
+
+
+
+
+
+
+
+	{% block produit_body %}
+		
+		{{ include("stock/form.html.twig") }}
+	{% endblock %}
